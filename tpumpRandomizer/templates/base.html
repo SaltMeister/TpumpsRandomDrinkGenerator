@@ -1,13 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Hello -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="{% static 'mystyle.css' %}"/>
+  <script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
+
+  <script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}"></script>
+
   <title>Tpumps Drink Randomizer</title>
 </head>
 <body>
-    {% block content%}
-    {% endblock content%}
+  <!-- NavBar -->
+  <div class="navbar">
+    <h3>Logo</h3>
+
+    <div class="nav-button">
+      <h3>Latest Creations</h3>
+    </div>
+
+  </div>
+
+  <!-- Body -->
+  <section>
+    {% include "home.html" %}    
+  </section>
+
+
+  {% include "footer.html" %}
 </body>
 </html>
