@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  padding: 0.25rem;
+  justify-content: space-between;
+  align-items:center;
+  justify-items: center;
+}
+
+.nav-button {
+  background-color: aliceblue;
+  padding: 0.75rem 2rem 0.75rem 2rem;
+}
+
+.nav-left {
+  flex-grow: 1;
+  margin-left: 4rem;
+}
+.nav-right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}

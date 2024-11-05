@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Hello -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="{% static 'navbar.css' %}"/>
+  <link rel="stylesheet" href="{% static 'history.css' %}"/>
+
+  <!-- <script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
+  <script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}"></script> -->
+
+  <title>Tpumps Drink Randomizer</title>
+</head>
+<body>
+  <!-- NavBar -->
+  <section>
+    {% include "navbar.html" %}
+  </section>
+
+  <section>
+    {% include 'drinkHistory.html' %}
+  </section>
+</body>
+</html>

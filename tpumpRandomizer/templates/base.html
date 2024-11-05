@@ -6,24 +6,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="{% static 'mystyle.css' %}"/>
-  <script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
 
+  <link type="text/css" rel="stylesheet" href="{% static 'navbar.css' %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static 'home.css' %}"/>
+
+  <script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
   <script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}"></script>
 
   <title>Tpumps Drink Randomizer</title>
 </head>
 <body>
-  <!-- NavBar -->
-  <div class="navbar">
-    <h3>Logo</h3>
-
-    <div class="nav-button">
-      <h3>Latest Creations</h3>
-    </div>
-
-  </div>
+  <section>
+    {% include "navbar.html" %}
+  </section>
 
   <!-- Body -->
   <section>
@@ -31,6 +26,7 @@
   </section>
 
 
-  {% include "footer.html" %}
+  {% include "footer.html" %}    
+
 </body>
 </html>
