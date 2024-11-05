@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static/js",
     BASE_DIR / "static/css"
 ]
-
+STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

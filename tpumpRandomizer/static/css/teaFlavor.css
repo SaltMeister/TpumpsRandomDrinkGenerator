@@ -1,0 +1,88 @@
+
+.flavor-option-container {
+  background-color: azure;
+  flex-direction: column;
+}
+.flavor-filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.flavor-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.flavor-button {
+  border-radius: 15px;
+  background-color: aliceblue;
+  transition: background 200ms;
+  font-weight: 400;
+}
+.flavor-button:hover {
+  background-color: antiquewhite;
+}
+
+.flavor-filter-button {
+  border-radius: 15px;
+  background-color: oldlace;
+  transition: background 200ms;
+  font-weight: 500;
+}
+.flavor-filter-button:hover {
+  background-color: antiquewhite;
+}
+
+
+@media screen and (min-width: 1025px) {
+  .flavor-option-container {
+    padding: 2em;
+  }
+  .flavor-button {
+    margin: 0.15rem;
+    padding: 0.25rem;
+    font-size: calc(1vw + 5px);
+  }
+  .flavor-filter-button {
+    margin: 0.25rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    font-size: 1em;
+
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 426px) {
+  .flavor-option-container {
+    padding: 1em;
+  }
+  .flavor-button {
+    margin: 0.20rem;
+    padding: 0.10rem;
+    font-size: 1.5em;
+
+  }
+  .flavor-filter-button {
+    margin: 0.10rem;
+    padding: 0.25rem;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 425px)  {
+  .flavor-option-container {
+    padding: 0px;
+  }
+  .flavor-button {
+    margin: 0.10rem;
+    padding: 0.10rem;
+    font-size: 1em;
+
+  }
+  .flavor-filter-button {
+    margin: 0.10rem;
+    padding: 0.25rem;
+    font-size: 1em;
+  }
+}
