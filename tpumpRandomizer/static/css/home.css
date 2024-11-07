@@ -10,6 +10,8 @@ p {
 fieldset {
   padding: 1.25em;
   border: none;
+  display:flex;
+  flex-direction: column;
 }
 
 .generate-button {
@@ -43,9 +45,11 @@ fieldset {
 }
 @media screen and (max-width: 1025px) {
   fieldset {
-    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: start;
+    margin: 0.rem;
+    padding: 0rem;
   }
 
   .input-item {
