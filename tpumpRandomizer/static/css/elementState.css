@@ -1,0 +1,7 @@
+.pressable {
+    transition: background 200ms;
+
+}
+.active {
+    background-color: blue;
+}

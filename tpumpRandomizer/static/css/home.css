@@ -1,20 +1,17 @@
 body {
   margin: 0px;
-  background-color: lightsalmon;
+  background-color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 p {
   margin: 5px;
 }
+
 fieldset {
-  border-radius: 15px;
   padding: 1.25em;
-  background-color: aliceblue;
+  border: none;
 }
- input {
-  transform: scale(1.5);
-  margin: 1em;
- }
+
 .generate-button {
   display: flex;
   justify-content: center;
@@ -34,3 +31,25 @@ fieldset {
   box-shadow: 20px 20px 50px 10px pink inset;
 }
 
+.input-item {
+  border-radius: 10px;
+  background-color: lightcyan;
+  transition: background 200ms;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+.input-item:hover {
+  background-color: beige;
+}
+@media screen and (max-width: 1025px) {
+  fieldset {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .input-item {
+    padding: 0.1rem;
+    margin: 0.1rem;
+  }
+}

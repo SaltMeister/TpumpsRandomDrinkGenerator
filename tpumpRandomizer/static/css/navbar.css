@@ -20,3 +20,18 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media screen and (max-width: 1025px) {
+  .navbar {
+    padding: 0.1rem;
+  }
+  .nav-button {
+    padding: 0.25rem 0.1rem 0.25rem 0.1rem;
+  }
+  .nav-left {
+    margin-left: 1rem;
+  }
+  .nav-right {
+    justify-content: space-around;
+  }
+}
