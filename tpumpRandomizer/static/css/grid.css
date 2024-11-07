@@ -81,7 +81,7 @@
 
 
 /* Special Spacing for mid sized Screens */
-@media screen and (max-width: 700px) and (min-width: 400px) {
+@media screen and (max-width: 1025px) and (min-width: 400px) {
   .container {
     padding-left: 5%;
     padding-right: 5%;
