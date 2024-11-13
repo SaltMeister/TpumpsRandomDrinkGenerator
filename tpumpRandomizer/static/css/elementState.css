@@ -2,6 +2,9 @@
     transition: background 200ms;
 
 }
-.active {
-    background-color: blue;
+.selected {
+    background-color: blue !important;
+}
+.disabled {
+    background-color: lightgray;
 }
