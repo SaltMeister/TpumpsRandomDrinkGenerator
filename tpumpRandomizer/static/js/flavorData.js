@@ -41,7 +41,8 @@ const flavors = {
   "40": { "name": "taro", "extraPrice": 1, "themes": ["nutty", "sweet"] },
   "41": { "name": "honeydew", "extraPrice": 1, "themes": ["dessert", "rich"] }
 }
-  
+
+const filterList = ["All", "Fruity", "Sweet", "Sour", "Dessert", "Nutty", "Spiced", "Rich"];
 
 
 // Chat gpt gods

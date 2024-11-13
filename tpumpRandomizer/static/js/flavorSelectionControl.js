@@ -2,7 +2,6 @@ console.log(flavors)
 
 let selectedFlavors = []
 
-const flavorFiltersContainerRef = document.getElementById("flavor-filters");
 const flavorOptionsContainerRef = document.getElementById("flavor-options");
 
 // Create All Flavors onto page
@@ -17,9 +16,6 @@ Object.keys(flavors).forEach( key => {
     itemNameRef.textContent = flavors[key].name
 
     itemContainerRef.appendChild(itemNameRef);
-
-
-
     flavorOptionsContainerRef.appendChild(itemContainerRef)
 
     itemContainerRef.addEventListener('click', () => {
