@@ -18,18 +18,21 @@ for(const filterName of filterList) {
   filterContainerRef.addEventListener('click', () => {
     CreateClearFilterButton();
     console.log("Clicked Filter", filterName);
-    const ref = document.getElementById(filterName.toLowerCase());
-  
-    // Filter Deselecting
-    if (ref.classList.contains(filterName)) {
-      filterContainerRef.classList.remove("selected");
-      return
-    }
-
+    //const ref = document.getElementById(filterName.toLowerCase());
     
+    // // Filter Deselecting
+    // if (ref.classList.contains(selected)) {
+    //   filterContainerRef.classList.remove("selected");
+    //   return
+    // }
+
 
     filterContainerRef.classList.add("selected");
-    HighlightFilterFlavors(filterName)
+
+    if(filterName.toLowerCase() === "all")
+      HighlightAllFlavors();
+    else
+      HighlightFilterFlavors(filterName)
   })
 }  
 
@@ -47,6 +50,17 @@ function HighlightFilterFlavors(filterName) {
     selectedFlavors.push(item.id);
     ref.classList.add("selected");
   }
+}
+
+function HighlightAllFlavors() {
+  selectedFlavors.length = 0;
+
+  const flavorButtonRefs = document.getElementsByClassName("flavor-button");
+  for(const flavor of flavorButtonRefs) {
+    flavor.classList.add("selected");
+    selectedFlavors.push(flavor.id)
+  }
+  console.log(selectedFlavors);
 }
 
 function ClearAllFilterHighlights() {
@@ -89,6 +103,7 @@ function CreateClearFilterButton() {
   flavorFiltersContainerRef.appendChild(clearDivRef);
 
 }
+
 function RemoveClearFilterButton() {
   document.getElementById("clear-filter-button").remove()
 }

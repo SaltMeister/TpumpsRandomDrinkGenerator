@@ -43,6 +43,14 @@ fieldset {
 .input-item:hover {
   background-color: beige;
 }
+
+.title1 {
+  font-size: 2rem;
+}
+.title2 {
+  font-size: 1.75rem;
+}
+
 @media screen and (max-width: 1025px) {
   fieldset {
     flex-direction: row;
@@ -55,5 +63,15 @@ fieldset {
   .input-item {
     padding: 0.1rem;
     margin: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 425px)  {
+
+  .title1 {
+    font-size: 1.5rem;
+  }
+  .title2 {
+    font-size: 1.25rem;
   }
 }
