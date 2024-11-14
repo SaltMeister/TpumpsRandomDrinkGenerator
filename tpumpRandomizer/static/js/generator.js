@@ -20,6 +20,10 @@ document.getElementById("no-blend").classList.add("selected")
 document.getElementById("tea-random").classList.add("selected")
 
 
+document.getElementById("generate-button").addEventListener('click', () => {
+  GenerateRandomDrink();
+})
+
 
 for (const sugar of sugarOptions) {
   const ref = document.getElementById(sugar);
@@ -105,27 +109,90 @@ for (const blend of blendOptions) {
 
 
 function GenerateRandomDrink() {
-  
+  const generatedData = {
+    flavors: GetRandomFlavors(),
+    sugarSetting: GetSugarSetting(),
+    iceSetting: GetIceSetting(),
+    teaSetting: GetTeaSetting(),
+    milkSetting: GetMilKSetting(),
+    blendSetting: GetBlendSetting(),
+  }
+
+  CreateModal(generatedData);
 }
 
 // Handle input decisions
+// Return Array
 function GetRandomFlavors() {
+  let pickedFlavors = []
 
-}
+  // Handle Less Than 3 flavors selected
+  if(selectedFlavors.length <= 3) {
+    for(const flavorId of selectedFlavors) 
+      pickedFlavors.push(flavors[flavorId].name);
+    return pickedFlavors;
+  }
+  
+  // Select Non Duplicate Flavors from Selected Flavor List
+  let pickedIdHistory = new Set();
+  while(pickedFlavors.length < 3) {
+    // Generate Random Number
+    const randIndex = Math.floor(Math.random() * (selectedFlavors.length - 1))
+    const randSelect = selectedFlavors[randIndex];
 
-function GetMilKSetting() {
+    if(pickedIdHistory.has(randSelect))
+      continue;
 
-}
+    pickedFlavors.push(flavors[randSelect].name);
+    pickedIdHistory.add(randSelect)
+  }
 
-function GetTeaSetting() {
 
+  return pickedFlavors;
 }
 
 function GetSugarSetting() {
+  if (sugarInput !== "sugar-random")
+    return sugarInput.replace('-', ' ');
 
+  // Generate Random Number
+  const randSelect = Math.floor(Math.random() * (sugarInput.length - 1))
+  return sugarInput[randSelect];
 }
 
 function GetIceSetting() {
+  if (iceInput !== "ice-random")
+    return iceInput.replace('-', ' ');
 
+  // Generate Random Number
+  const randSelect = Math.floor(Math.random() * (iceInput.length - 1))
+  return iceInput[randSelect];
+}
+
+function GetMilKSetting() {
+  if (milkInput !== "milk-random")
+    return milkInput.replace('-', ' ');
+
+  // Generate Random Number
+  const randSelect = Math.floor(Math.random() * (milkOptions.length - 1))
+  return milkOptions[randSelect];
+}
+
+function GetTeaSetting() {
+  if (teaInput !== "tea-random")
+    return teaInput.replace('-', ' ');
+
+  // Generate Random Number
+  const randSelect = Math.floor(Math.random() * (teaInput.length - 1))
+  return teaInput[randSelect];
+}
+
+function GetBlendSetting() {
+  if (blendInput !== "blend-random")
+    return blendInput.replace('-', ' ');
+
+  // Generate Random Number
+  const randSelect = Math.floor(Math.random() * (blendInput.length - 1))
+  return blendInput[randSelect];
 }
 

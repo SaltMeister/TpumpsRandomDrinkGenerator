@@ -6,9 +6,57 @@
 //     ice: "100"
 // }
 
-function CreateModal(options) {
+
+function CreateModal(generatedData) {
+    const bodyRef = document.getElementById("body");
     // Create Box and background
+
+    const containerRef = document.createElement("div");
+    const backgroundRef = document.createElement("div");
+
+    containerRef.classList.add("modal-container");
+    
+    containerRef.id = "modal";
+    
+    backgroundRef.classList.add("modal-background");
+    backgroundRef.id = "modal-background";
+
+    // Create Inner HTML
+    const innerhtml = `
+        <div class="modal-flavor-settings" id="modal-flavor-settings">
+
+        </div>
+        <div class="modal-sub-settings">
+            <p class="title2">${generatedData.sugarSetting}</p>
+            <p class="title2">${generatedData.iceSetting}</p>
+            <p class="title2">${generatedData.teaSetting}</p>
+            <p class="title2">${generatedData.milkSetting}</p>
+            <p class="title2">${generatedData.blendSetting}</p>
+        </div>
+        <div class="modal-button pressable" onclick="CloseModal">
+            <p class="title2">Close</p>
+        </div>
+    `
+
+    containerRef.innerHTML = innerhtml;
+
+    bodyRef.appendChild(containerRef);
+
+    const boxRef = document.getElementById("modal-flavor-settings");
+
+    for (const flavor of generatedData.flavors) {
+        const element = document.createElement("p")
+        element.innerText = flavor;
+        element.classList.add("title2");
+
+        boxRef.appendChild(element);
+    }
 
     
 }
 
+
+function CloseModal() {
+    document.getElementById("modal").remove();
+    document.getElementById("modal-background").remove();
+}

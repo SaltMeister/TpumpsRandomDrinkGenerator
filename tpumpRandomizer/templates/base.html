@@ -16,11 +16,12 @@
   <link type="text/css" rel="stylesheet" href="{% static 'inputBox.css' %}"/>
   <link type="text/css" rel="stylesheet" href="{% static 'home.css' %}"/>
 
+  <link type="text/css" rel="stylesheet" href="{% static 'modal.css' %}"/>
   <!-- TODO: ADD FAVICON -->
   <!-- <link type="" -->
   <title>Tpumps Randomizer</title>
 </head>
-<body>
+<body id="body">
   <section>
     {% include "navbar.html" %}
   </section>
@@ -34,7 +35,7 @@
   {% include "footer.html" %}    
 
 </body>
-
+<script type="text/javascript" src="{% static 'modal.js' %}"></script> <!-- Load First So below has reference -->
 <script type="text/javascript" src="{% static 'navbar.js' %}"></script> <!-- Load First So below has reference -->
 <script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
 <script type="text/javascript" src="{% static 'filterController.js' %}"></script> <!-- Load First So below has reference -->
