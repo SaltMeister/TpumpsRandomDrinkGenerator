@@ -15,15 +15,10 @@ for(const filterName of filterList) {
   filterContainerRef.appendChild(filterNameRef);
   flavorFiltersContainerRef.appendChild(filterContainerRef);
 
-
+  // HighLight filter
+  // Auto Select All Flavors
   filterContainerRef.addEventListener('click', () => {
     console.log("Clicked Filter", filterName);
     
   })
 }  
-
-// Set 'All' Filter Active
-document.getElementById("all").classList.add("selected");
-
-
-// Perform Highlighting 

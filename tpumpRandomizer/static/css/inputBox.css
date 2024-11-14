@@ -1,4 +1,4 @@
-.percentage-input-box {
+.input-box {
     border-radius: 15px;
     background-color: aliceblue;
     margin: 0.5rem;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 1025px) {
-    .percentage-input-box {    
+    .input-box {    
         margin: 0.1rem;
         padding: 0.5rem;
         padding-left: 1rem;

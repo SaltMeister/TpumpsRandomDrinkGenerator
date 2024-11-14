@@ -25,11 +25,11 @@ for (const sugar of sugarOptions) {
   const ref = document.getElementById(sugar);
 
   ref.addEventListener('click', () => {
-    document.getElementById(sugarInput).classList.remove("selected")
     if(sugar === sugarInput) {
-      sugarInput = ""
       return
     }
+
+    document.getElementById(sugarInput).classList.remove("selected")
     sugarInput = sugar
     
     console.log("set sugar to ", sugar)
@@ -42,14 +42,13 @@ for (const ice of iceOptions) {
   const ref = document.getElementById(ice);
 
   ref.addEventListener('click', () => {
-    document.getElementById(iceInput).classList.remove("selected")
-
     if(ice === iceInput) {
-      iceInput = ""
       return
     }
 
+    document.getElementById(iceInput).classList.remove("selected")
     iceInput = ice
+
     console.log("set ice to ", ice)
     ref.classList.add("selected");
   })
@@ -59,14 +58,13 @@ for (const milk of milkOptions) {
   const ref = document.getElementById(milk);
 
   ref.addEventListener('click', () => {
-    document.getElementById(milkInput).classList.remove("selected")
-
     if(milk === milkInput) {
-      milkInput = ""
       return
     }
 
+    document.getElementById(milkInput).classList.remove("selected")
     milkInput = milk
+
     console.log("set milk to ", milk)
     ref.classList.add("selected");
   })
@@ -76,14 +74,13 @@ for (const tea of teaOptions) {
   const ref = document.getElementById(tea);
 
   ref.addEventListener('click', () => {
-    document.getElementById(teaInput).classList.remove("selected")
-
     if(tea === teaInput) {
-      teaInput = ""
       return
     }
 
+    document.getElementById(teaInput).classList.remove("selected")
     teaInput = tea
+
     console.log("set tea to ", tea)
     ref.classList.add("selected");
   })
@@ -93,14 +90,13 @@ for (const blend of blendOptions) {
   const ref = document.getElementById(blend);
 
   ref.addEventListener('click', () => {
-    document.getElementById(blendInput).classList.remove("selected")
-
     if(blend === blendInput) {
-      blendInput = ""
       return
     }
 
+    document.getElementById(blendInput).classList.remove("selected")
     blendInput = blend
+    
     console.log("set blend to ", blend)
     ref.classList.add("selected");
   })
@@ -111,3 +107,25 @@ for (const blend of blendOptions) {
 function GenerateRandomDrink() {
   
 }
+
+// Handle input decisions
+function GetRandomFlavors() {
+
+}
+
+function GetMilKSetting() {
+
+}
+
+function GetTeaSetting() {
+
+}
+
+function GetSugarSetting() {
+
+}
+
+function GetIceSetting() {
+
+}
+

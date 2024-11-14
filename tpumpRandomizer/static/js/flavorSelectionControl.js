@@ -28,15 +28,6 @@ Object.keys(flavors).forEach( key => {
 
 
 function SelectFlavor(flavorId) {
-
-
-  // Remove Oldest Element
-  // Add Newest Element
-  if (selectedFlavors.length >= 3 && !selectedFlavors.includes(flavorId)) {
-    const removeId = selectedFlavors.pop()
-    DeselectFlavor(removeId)
-  }
-
   // If already selected remove from array
   if (selectedFlavors.includes(flavorId)) {
     console.log("Already Selected")
@@ -71,5 +62,5 @@ function HighLightSelectedFlavors() {
 function RemoveHighLight(flavorId) {
   const flavorRef = document.getElementById(flavorId);
 
-  flavorRef.classList.toggle("selected");
+  flavorRef.classList.remove("selected");
 }
