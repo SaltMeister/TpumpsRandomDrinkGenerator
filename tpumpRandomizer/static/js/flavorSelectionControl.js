@@ -30,15 +30,12 @@ Object.keys(flavors).forEach( key => {
 function SelectFlavor(flavorId) {
   // If already selected remove from array
   if (selectedFlavors.includes(flavorId)) {
-    console.log("Already Selected")
     DeselectFlavor(flavorId);
-    console.log(selectedFlavors, flavorId)
     return
   }
 
   // Add Element to queue
   selectedFlavors.unshift(flavorId);
-  console.log(selectedFlavors, flavorId)
 }
 function DeselectFlavor(flavorId) {
   // Filter Out Removed Index
@@ -48,7 +45,13 @@ function DeselectFlavor(flavorId) {
 
 // Highlight all selected flavors in array
 function HighLightSelectedFlavors() {
-  console.log("Selecting");
+  console.log(document.getElementById("clear-filter-button"))
+  if (document.getElementById("clear-filter-button") === null) {
+    CreateClearFilterButton();
+    console.log("Creating Filter Button")
+  }
+    
+
   for (const flavorId of selectedFlavors) {
     // Grab Element
     // Highlight
@@ -60,6 +63,9 @@ function HighLightSelectedFlavors() {
 
 // Remove Selected Class From Flavor
 function RemoveHighLight(flavorId) {
+  if (selectedFlavors.length <= 0)
+    RemoveClearFilterButton();
+
   const flavorRef = document.getElementById(flavorId);
 
   flavorRef.classList.remove("selected");
