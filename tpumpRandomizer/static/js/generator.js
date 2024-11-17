@@ -117,7 +117,7 @@ function GenerateRandomDrink() {
     milkSetting: GetMilKSetting(),
     blendSetting: GetBlendSetting(),
   }
-
+  console.log(generatedData);
   CreateModal(generatedData);
 }
 
@@ -179,12 +179,13 @@ function GetMilKSetting() {
 }
 
 function GetTeaSetting() {
-  if (teaInput !== "tea-random")
-    return teaInput.replace('-', ' ');
-
-  // Generate Random Number
-  const randSelect = Math.floor(Math.random() * (teaInput.length - 1))
-  return teaInput[randSelect];
+  if (teaInput === "tea-random") {
+    const rand = Math.floor(Math.random() * 100);
+    return rand % 2 === 1 ? "Green Tea" : "Black Tea";
+  }
+  
+  const ref = document.getElementById(teaInput);
+  return ref.innerText;
 }
 
 function GetBlendSetting() {

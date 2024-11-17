@@ -33,18 +33,21 @@ function CreateModal(generatedData) {
             <p class="title2">${generatedData.milkSetting}</p>
             <p class="title2">${generatedData.blendSetting}</p>
         </div>
-        <div class="modal-button pressable" onclick="CloseModal">
+        <div class="modal-button pressable" onclick="CloseModal()">
             <p class="title2">Close</p>
         </div>
     `
 
     containerRef.innerHTML = innerhtml;
 
+    bodyRef.appendChild(backgroundRef);
     bodyRef.appendChild(containerRef);
 
     const boxRef = document.getElementById("modal-flavor-settings");
 
     for (const flavor of generatedData.flavors) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         const element = document.createElement("p")
         element.innerText = flavor;
         element.classList.add("title2");
@@ -57,6 +60,7 @@ function CreateModal(generatedData) {
 
 
 function CloseModal() {
+    console.log("Closing Modal");
     document.getElementById("modal").remove();
     document.getElementById("modal-background").remove();
 }
