@@ -22,7 +22,8 @@
   <title>Tpumps Randomizer</title>
 </head>
 <body id="body">
-  <section>
+
+  <section onclick="AddDrinkToDb()">
     {% include "navbar.html" %}
   </section>
 
@@ -41,4 +42,5 @@
 <script type="text/javascript" src="{% static 'filterController.js' %}"></script> <!-- Load First So below has reference -->
 <script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}"></script>
 <script type="text/javascript" src="{% static 'generator.js' %}"></script>
+<script type="text/javascript" src="{% static 'airtable.js' %}"></script>
 </html>
