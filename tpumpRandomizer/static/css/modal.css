@@ -1,21 +1,24 @@
 .modal-container {
-  top:50vh;
-  left:50vw;
-  margin-top: -25vh;
-  margin-left: -25vw;
+  top:50%;
+  left:50%;
+  margin-top: -30vh;
+  margin-left: -30vw;
 
 
   transition: all 500ms;
   animation: fadeInDown 200ms;
 
-  height: 50vh;
-  width: 50vw;
+  height: 60vh;
+  width: 60vw;
   position: absolute;
-  padding: 2em;
+  padding: 0px;
   border-radius: 15px;;
   background-color: white;
   z-index: 4;
 
+  display: flex;
+  justify-content: space-around;
+  flex-direction:  column;
 }
 
 .modal-background {
@@ -35,6 +38,24 @@
 .modal-flavor-settings {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  margin: 2%;
+  padding: 0.1%;
+  text-transform: capitalize;
+}
+
+.modal-sub-settings {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+
+.modal-button {
+  background-color: red;
+  border-radius: 15px;
+  text-align: center;
+  bottom: 10px;
 }
 
 @keyframes fadeInDown {

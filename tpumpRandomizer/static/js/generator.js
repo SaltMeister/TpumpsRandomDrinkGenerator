@@ -119,6 +119,7 @@ function GenerateRandomDrink() {
   }
   console.log(generatedData);
   CreateModal(generatedData);
+  AddDrinkToDb(generatedData);
 }
 
 // Handle input decisions
@@ -175,7 +176,7 @@ function GetMilKSetting() {
 
   // Generate Random Number
   const randSelect = Math.floor(Math.random() * (milkOptions.length - 1))
-  return milkOptions[randSelect];
+  return milkOptions[randSelect].replace('-', ' ');
 }
 
 function GetTeaSetting() {
@@ -194,6 +195,6 @@ function GetBlendSetting() {
 
   // Generate Random Number
   const randSelect = Math.floor(Math.random() * (blendInput.length - 1))
-  return blendInput[randSelect];
+  return blendInput[randSelect].replace('-', ' ');
 }
 

@@ -48,6 +48,10 @@
   background-color: antiquewhite;
 }
 
+p {
+  text-transform: capitalize;
+}
+
 @media screen and (min-width: 1025px) {
   .flavor-option-container {
     padding: 2em;

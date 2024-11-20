@@ -46,9 +46,11 @@ fieldset {
 
 .title1 {
   font-size: 1.75rem;
+  text-transform: capitalize;
 }
 .title2 {
   font-size: 1.25rem;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 1025px) {
@@ -69,7 +71,7 @@ fieldset {
 @media screen and (max-width: 425px)  {
 
   .title1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .title2 {
     font-size: 1rem;

@@ -21,17 +21,21 @@ function CreateModal(generatedData) {
     backgroundRef.classList.add("modal-background");
     backgroundRef.id = "modal-background";
 
+
+    const sugarText = generatedData.sugarSetting.split(" ")[1] + '%';
+    const iceText = generatedData.iceSetting.split(" ")[1] + '%';
     // Create Inner HTML
     const innerhtml = `
         <div class="modal-flavor-settings" id="modal-flavor-settings">
 
         </div>
+
         <div class="modal-sub-settings">
-            <p class="title2">${generatedData.sugarSetting}</p>
-            <p class="title2">${generatedData.iceSetting}</p>
-            <p class="title2">${generatedData.teaSetting}</p>
-            <p class="title2">${generatedData.milkSetting}</p>
-            <p class="title2">${generatedData.blendSetting}</p>
+            <p class="title2"><strong>Sugar:</strong> ${sugarText}</p>
+            <p class="title2"><strong>Ice:</strong> ${iceText}</p>
+            <p class="title2"><strong>Tea:</strong> ${generatedData.teaSetting}</p>
+            <p class="title2"><strong>Add Milk:</strong> ${generatedData.milkSetting}</p>
+            <p class="title2"><strong>Blend:</strong> ${generatedData.blendSetting}</p>
         </div>
         <div class="modal-button pressable" onclick="CloseModal()">
             <p class="title2">Close</p>
@@ -45,12 +49,13 @@ function CreateModal(generatedData) {
 
     const boxRef = document.getElementById("modal-flavor-settings");
 
+    // Add Flavor Text to modal
     for (const flavor of generatedData.flavors) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         const element = document.createElement("p")
         element.innerText = flavor;
-        element.classList.add("title2");
+        element.classList.add("title1");
 
         boxRef.appendChild(element);
     }
