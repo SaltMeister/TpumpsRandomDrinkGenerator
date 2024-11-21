@@ -123,7 +123,8 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     BASE_DIR / "static/js",
-    BASE_DIR / "static/css"
+    BASE_DIR / "static/css",
+    BASE_DIR / "static/favicon",
 ]
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
