@@ -6,3 +6,7 @@ function navigateHome() {
 function navigateHistory() {
   window.location += "/history"
 }
+
+function navigateLogin() {
+  window.location += "/login"
+}

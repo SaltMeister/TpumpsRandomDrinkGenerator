@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Hello -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link type="text/css" rel="stylesheet" href="{% static 'unselectable.css' %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static 'elementState.css' %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static 'navbar.css' %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static 'inputBox.css' %}"/>
+  <link type="text/css" rel="stylesheet" href="{% static 'login.css' %}"/>
+  <!-- TODO: ADD FAVICON -->
+  <!-- <link type="" -->
+  <title>Login - Tpumps Randomizer</title>
+</head>
+<body id="body">
+
+  <section onclick="AddDrinkToDb()">
+    {% include "navbar.html" %}
+  </section>
+
+  <!-- Body -->
+  <section class="container">
+    {% include "login.html" %}    
+  </section>
+
+
+  {% include "footer.html" %}    
+
+</body>
+<script type="text/javascript" src="{% static 'navbar.js' %}"></script> <!-- Load First So below has reference -->
+<script type="text/javascript" src="{% static 'login.js' %}"></script>
+<script type="text/javascript" src="{% static 'airtable.js' %}"></script>
+</html>

@@ -29,5 +29,5 @@ async function AddDrinkToDb(drinkData) {
 }
 
 async function GetAllDrinksFromDb() {
-
+  const csrfToken = getCookie("csrfToken");
 }

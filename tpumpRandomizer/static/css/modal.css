@@ -55,6 +55,7 @@
   background-color: red;
   border-radius: 15px;
   text-align: center;
+  padding: 10px;
   bottom: 10px;
 }
 
@@ -69,4 +70,19 @@
     opacity: 1;
   }
 
+}
+
+
+@media screen and (max-width: 500px) {
+  .modal-flavor-settings {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    margin: 2%;
+    padding: 0.1%;
+    text-transform: capitalize;
+  }
+  
 }

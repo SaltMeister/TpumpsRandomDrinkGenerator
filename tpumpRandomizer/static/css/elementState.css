@@ -3,7 +3,8 @@
 
 }
 .selected {
-    background-color: royalblue !important;
+    background-color: #376996 !important;
+    color: #E6FFFF !important;
 }
 .disabled {
     background-color: lightgray;
