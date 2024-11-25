@@ -21,6 +21,15 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}"/>
 
+
+  <script type="text/javascript" src="{% static 'modal.js' %}" defer></script> <!-- Load First So below has reference -->
+  <script type="text/javascript" src="{% static 'navbar.js' %}" defer></script> <!-- Load First So below has reference -->
+  <script type="text/javascript" src="{% static 'flavorData.js' %}" defer></script> <!-- Load First So below has reference -->
+  <script type="text/javascript" src="{% static 'filterController.js' %}" defer></script> <!-- Load First So below has reference -->
+  <script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'generator.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'airtable.js' %}" defer></script>
+  
   <title>Tpumps Randomizer</title>
 </head>
 <body id="body">
@@ -38,11 +47,5 @@
   {% include "footer.html" %}    
 
 </body>
-<script type="text/javascript" src="{% static 'modal.js' %}"></script> <!-- Load First So below has reference -->
-<script type="text/javascript" src="{% static 'navbar.js' %}"></script> <!-- Load First So below has reference -->
-<script type="text/javascript" src="{% static 'flavorData.js' %}"></script> <!-- Load First So below has reference -->
-<script type="text/javascript" src="{% static 'filterController.js' %}"></script> <!-- Load First So below has reference -->
-<script type="text/javascript" src="{% static 'flavorSelectionControl.js' %}"></script>
-<script type="text/javascript" src="{% static 'generator.js' %}"></script>
-<script type="text/javascript" src="{% static 'airtable.js' %}"></script>
+
 </html>

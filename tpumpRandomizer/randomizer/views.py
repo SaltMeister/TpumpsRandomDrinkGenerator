@@ -69,14 +69,30 @@ def drink(request):
         # TODO Add Object data to airtable
         returnDict = {
             "Success": True,
+            "Body": data
         }
 
-        return JsonResponse(data)
+        return JsonResponse(returnDict)
     # Return All Drink Settings
     elif request.method == "GET":
-        print(table.all());
+        try:
+            # Grab Latest 20 items from the table
+            dbData = table.all(
+                sort=["-date"], 
+                max_records=20
+                )
+
+            return JsonResponse({
+                "Success": True,
+                "Body": dbData
+            })
+        except:
+            return JsonResponse({
+                "Success": False,
+                "Reason": "Could Not Get From Database"
+            })
 
     return JsonResponse({
         "Success": False,
-        "Reason": "Could No Add To Database"
+        "Reason": "Error From Database"
     })

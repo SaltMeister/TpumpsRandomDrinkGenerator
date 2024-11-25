@@ -11,7 +11,7 @@ function getCookie(name) {
 async function AddDrinkToDb(drinkData) {
   const csrfToken = getCookie("csrfToken");
   console.log(drinkData)
-  const url = "drink/create";
+  const url = "drink";
   const headers = {
     method: "POST",
     headers: {
@@ -30,4 +30,15 @@ async function AddDrinkToDb(drinkData) {
 
 async function GetAllDrinksFromDb() {
   const csrfToken = getCookie("csrfToken");
+  const url = "drink";
+  const headers = {
+    method: "GET",
+    headers: {
+      "X-CSRFToken": csrfToken // Token for Django to prevent CSRF Attacks
+    },
+  }
+
+  await fetch(url, headers)
+  .then(response => response.json())
+  .then(data => console.log(data))
 }

@@ -22,14 +22,14 @@ load_dotenv() # Load Environment File
 DB_KEY = os.getenv("DB_KEY") 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
+# TODO Handle WHEN DEPLOYING
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-*vx6$uvujqt$hvzw)^!@!y02+^&_-!zd3-2lzd*b+x#ia0%=$i'
-
+# TODO Handle WHEN DEPLOYING
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
