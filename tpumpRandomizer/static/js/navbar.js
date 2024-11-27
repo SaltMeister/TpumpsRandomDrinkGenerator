@@ -1,12 +1,12 @@
 // Navbar functions for navigation
 function navigateHome() {
-  window.location = ""
+  window.location = "/"
 }
 
 function navigateHistory() {
-  window.location += "/history"
+  window.location = "/history"
 }
 
 function navigateLogin() {
-  window.location += "/login"
+  window.location = "/login"
 }

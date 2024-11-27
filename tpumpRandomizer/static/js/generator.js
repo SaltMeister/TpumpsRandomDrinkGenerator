@@ -190,11 +190,12 @@ function GetTeaSetting() {
 }
 
 function GetBlendSetting() {
+  console.log(blendInput)
   if (blendInput !== "blend-random")
     return blendInput.replace('-', ' ');
 
   // Generate Random Number
-  const randSelect = Math.floor(Math.random() * (blendInput.length - 1))
-  return blendInput[randSelect].replace('-', ' ');
+  const randSelect = Math.floor(Math.random() * (blendOptions.length - 1))
+  return blendOptions[randSelect].replace('-', ' ');
 }
 

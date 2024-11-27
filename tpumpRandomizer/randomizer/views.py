@@ -50,7 +50,8 @@ def drink(request):
             milkSetting = False
         else:
             milkSetting = True
-
+            
+        print(blendSetting)
         # Set Blend Boolean
         if blendSetting == "no blend":
             blendSetting = False
@@ -68,8 +69,8 @@ def drink(request):
         })
         # TODO Add Object data to airtable
         returnDict = {
-            "Success": True,
-            "Body": data
+            "success": True,
+            "body": data
         }
 
         return JsonResponse(returnDict)
@@ -83,16 +84,16 @@ def drink(request):
                 )
 
             return JsonResponse({
-                "Success": True,
-                "Body": dbData
+                "success": True,
+                "body": dbData
             })
         except:
             return JsonResponse({
-                "Success": False,
-                "Reason": "Could Not Get From Database"
+                "success": False,
+                "reason": "Could Not Get From Database"
             })
 
     return JsonResponse({
-        "Success": False,
-        "Reason": "Error From Database"
+        "success": False,
+        "reason": "Error From Database"
     })

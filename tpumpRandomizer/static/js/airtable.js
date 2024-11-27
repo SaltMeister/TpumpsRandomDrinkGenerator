@@ -38,7 +38,7 @@ async function GetAllDrinksFromDb() {
     },
   }
 
-  await fetch(url, headers)
+  return await fetch(url, headers)
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => data.body)
 }

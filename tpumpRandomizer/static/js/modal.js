@@ -34,8 +34,8 @@ function CreateModal(generatedData) {
             <p class="title2"><strong>Sugar:</strong> ${sugarText}</p>
             <p class="title2"><strong>Ice:</strong> ${iceText}</p>
             <p class="title2"><strong>Tea:</strong> ${generatedData.teaSetting}</p>
-            <p class="title2"><strong>Add Milk:</strong> ${generatedData.milkSetting}</p>
-            <p class="title2"><strong>Blend:</strong> ${generatedData.blendSetting}</p>
+            <p class="title2"><strong>Milk Setting:</strong> ${generatedData.milkSetting}</p>
+            <p class="title2"><strong>Blend Setting:</strong> ${generatedData.blendSetting}</p>
         </div>
         <div class="modal-button pressable" onclick="CloseModal()">
             <p class="title2">Close</p>
