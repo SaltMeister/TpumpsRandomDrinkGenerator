@@ -1,5 +1,6 @@
 const flavorFiltersContainerRef = document.getElementById("flavor-filters");
 
+// Create Filter Buttons
 for(const filterName of filterList) {
   
   let filterContainerRef = document.createElement("div");
@@ -13,19 +14,8 @@ for(const filterName of filterList) {
   filterContainerRef.appendChild(filterNameRef);
   flavorFiltersContainerRef.appendChild(filterContainerRef);
 
-  // HighLight filter
-  // Auto Select All Flavors
   filterContainerRef.addEventListener('click', () => {
     CreateClearFilterButton();
-    console.log("Clicked Filter", filterName);
-    //const ref = document.getElementById(filterName.toLowerCase());
-    
-    // // Filter Deselecting
-    // if (ref.classList.contains(selected)) {
-    //   filterContainerRef.classList.remove("selected");
-    //   return
-    // }
-
 
     filterContainerRef.classList.add("selected");
 
@@ -68,11 +58,9 @@ function HighlightAllFlavors() {
       
     selectedFlavors.push(flavor.id)
   }
-  console.log(selectedFlavors);
 }
 
 function ClearAllFilterHighlights() {
-  console.log("CLEARING ALL Selections")
   for(const filterName of filterList) {
     const ref = document.getElementById(filterName.toLowerCase())
 
@@ -98,7 +86,6 @@ function ClearFlavorHighlights() {
 }
 
 function CreateClearFilterButton() {
-  console.log(document.getElementById("clear-filter-button"))
   if(document.getElementById("clear-filter-button") !== null)
     return; 
 

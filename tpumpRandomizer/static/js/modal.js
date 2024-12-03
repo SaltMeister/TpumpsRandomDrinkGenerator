@@ -65,7 +65,6 @@ function CreateModal(generatedData) {
 
 
 function CloseModal() {
-    console.log("Closing Modal");
     document.getElementById("modal").remove();
     document.getElementById("modal-background").remove();
 }

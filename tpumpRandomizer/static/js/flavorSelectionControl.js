@@ -1,5 +1,3 @@
-console.log(flavors)
-
 let selectedFlavors = []
 
 const flavorOptionsContainerRef = document.getElementById("flavor-options");
@@ -25,7 +23,6 @@ Object.keys(flavors).forEach( key => {
 
 
     itemContainerRef.addEventListener('click', () => {
-      console.log("Clicked", key);
       SelectFlavor(key)
       HighLightSelectedFlavors();
     })
@@ -51,10 +48,8 @@ function DeselectFlavor(flavorId) {
 
 // Highlight all selected flavors in array
 function HighLightSelectedFlavors() {
-  console.log(document.getElementById("clear-filter-button"))
   if (document.getElementById("clear-filter-button") === null) {
     CreateClearFilterButton();
-    console.log("Creating Filter Button")
   }
     
 

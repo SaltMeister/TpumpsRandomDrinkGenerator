@@ -1,8 +1,6 @@
 
 async function DisplayRecentDrinks() {
   const drinkArray = await GetAllDrinksFromDb();
-  console.log("Drinks Array To Place", drinkArray);
-  //TODO Loop and create html elements
 
   const containerRef = document.getElementById("history-container");
   for (const drink of drinkArray) {
@@ -16,13 +14,10 @@ async function DisplayRecentDrinks() {
     const blendSetting = "isBlended" in drink.fields ? "Yes" : "No";
     const flavorArray = drink.fields.flavors.split(' ');
 
-
-
-    console.log(flavorArray, drink.fields.flavors);
     let flavorHTMLString = "";
 
     for (const flavor of flavorArray) {
-      console.log(flavor)
+      //console.log(flavor)
       // Ignore Space From Array Split
       if (flavor.length <= 1) 
         continue;
