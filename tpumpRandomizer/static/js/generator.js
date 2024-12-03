@@ -109,6 +109,14 @@ for (const blend of blendOptions) {
 
 
 function GenerateRandomDrink() {
+  // Automatically Select All Flavors if none selected
+  if (selectedFlavors.length <= 0) {
+    const allFlavors = document.getElementsByClassName("flavor-button");
+
+    for(const flavor of allFlavors)
+      selectedFlavors.push(flavor.id);
+  }
+
   const generatedData = {
     flavors: GetRandomFlavors(),
     sugarSetting: GetSugarSetting(),

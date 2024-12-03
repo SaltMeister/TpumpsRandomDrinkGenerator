@@ -22,7 +22,7 @@
 .flavor-button {
   border-radius: 15px;
   background-color: #D9FFFF;
-  transition: all 200ms;
+  transition: background 200ms;
   font-weight: 400;
 
   margin: 0.15rem;
