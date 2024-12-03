@@ -1,5 +1,6 @@
 const flavorFiltersContainerRef = document.getElementById("flavor-filters");
 
+// Create Filter Buttons
 for(const filterName of filterList) {
   
   let filterContainerRef = document.createElement("div");
@@ -13,19 +14,8 @@ for(const filterName of filterList) {
   filterContainerRef.appendChild(filterNameRef);
   flavorFiltersContainerRef.appendChild(filterContainerRef);
 
-  // HighLight filter
-  // Auto Select All Flavors
   filterContainerRef.addEventListener('click', () => {
     CreateClearFilterButton();
-    console.log("Clicked Filter", filterName);
-    //const ref = document.getElementById(filterName.toLowerCase());
-    
-    // // Filter Deselecting
-    // if (ref.classList.contains(selected)) {
-    //   filterContainerRef.classList.remove("selected");
-    //   return
-    // }
-
 
     filterContainerRef.classList.add("selected");
 
@@ -48,7 +38,11 @@ function HighlightFilterFlavors(filterName) {
   for(const item of filteredList) {
     const ref = document.getElementById(item.id);
     selectedFlavors.push(item.id);
-    ref.classList.add("selected");
+
+    if(ref.classList.contains("extra-cost"))
+      ref.classList.add("extra-selected");
+    else
+      ref.classList.add("selected");
   }
 }
 
@@ -57,14 +51,16 @@ function HighlightAllFlavors() {
 
   const flavorButtonRefs = document.getElementsByClassName("flavor-button");
   for(const flavor of flavorButtonRefs) {
-    flavor.classList.add("selected");
+    if(flavor.classList.contains("extra-cost"))
+      flavor.classList.add("extra-selected");
+    else
+      flavor.classList.add("selected");
+      
     selectedFlavors.push(flavor.id)
   }
-  console.log(selectedFlavors);
 }
 
 function ClearAllFilterHighlights() {
-  console.log("CLEARING ALL Selections")
   for(const filterName of filterList) {
     const ref = document.getElementById(filterName.toLowerCase())
 
@@ -79,7 +75,10 @@ function ClearAllFilterHighlights() {
 function ClearFlavorHighlights() {
   const flavorButtonRefs = document.getElementsByClassName("flavor-button");
   for(const flavor of flavorButtonRefs) {
-    flavor.classList.remove("selected");    
+    if(flavor.classList.contains("extra-cost"))
+    flavor.classList.remove("extra-selected");
+  else
+    flavor.classList.remove("selected");  
   }
 
   // Empty Selected Flavor Array
@@ -87,7 +86,6 @@ function ClearFlavorHighlights() {
 }
 
 function CreateClearFilterButton() {
-  console.log(document.getElementById("clear-filter-button"))
   if(document.getElementById("clear-filter-button") !== null)
     return; 
 

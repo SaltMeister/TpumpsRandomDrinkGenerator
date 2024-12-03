@@ -1,8 +1,6 @@
 
 async function DisplayRecentDrinks() {
   const drinkArray = await GetAllDrinksFromDb();
-  console.log("Drinks Array To Place", drinkArray);
-  //TODO Loop and create html elements
 
   const containerRef = document.getElementById("history-container");
   for (const drink of drinkArray) {
@@ -14,21 +12,24 @@ async function DisplayRecentDrinks() {
     // Milk Setting And Blend Setting Missing From Airtable if False
     const milkSetting = "isAddMilk" in drink.fields ? "Yes" : "No";
     const blendSetting = "isBlended" in drink.fields ? "Yes" : "No";
+
     const flavorArray = drink.fields.flavors.split(' ');
 
-
-
-    console.log(flavorArray, drink.fields.flavors);
     let flavorHTMLString = "";
 
     for (const flavor of flavorArray) {
-      console.log(flavor)
       // Ignore Space From Array Split
       if (flavor.length <= 1) 
         continue;
+      
+      const flavorName = flavor.trim().replaceAll("_", " ");
+      const flavorColor = Object.values(flavors).filter(x => {
+        console.log(x.name, flavorName)
+        return x.name === flavorName
+      })[0]["color"];
 
-
-      flavorHTMLString +=`<p class="title2">${flavor}</p>`
+      console.log(flavorName, flavorColor);
+      flavorHTMLString +=`<p class="title2 strong" style="color: ${flavorColor}">${flavorName}</p>`
     }
 
 
@@ -37,11 +38,11 @@ async function DisplayRecentDrinks() {
         ${flavorHTMLString}
       </div>
       <div>
-        <p>Sugar: ${drink.fields.sugarSetting}</p>
-        <p>Ice: ${drink.fields.iceSetting}</p>
-        <p>Has Milk: ${milkSetting}</p>
-        <p>Is Blended: ${blendSetting}</p>
-        <p>Tea: ${drink.fields.teaSetting}</p>
+        <p><span class="strong">Sugar:</span> ${drink.fields.sugarSetting}</p>
+        <p><span class="strong">Ice:</span> ${drink.fields.iceSetting}</p>
+        <p><span class="strong">Has Milk:</span> ${milkSetting}</p>
+        <p><span class="strong">Is Blended:</span> ${blendSetting}</p>
+        <p><span class="strong">Tea:</span> ${drink.fields.teaSetting}</p>
       </div>
     `
 

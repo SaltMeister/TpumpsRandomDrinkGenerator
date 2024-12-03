@@ -54,7 +54,7 @@ function CreateModal(generatedData) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         const element = document.createElement("p")
-        element.innerText = flavor;
+        element.innerText = flavor.replaceAll("_", " ");
         element.classList.add("title1");
 
         boxRef.appendChild(element);
@@ -65,7 +65,6 @@ function CreateModal(generatedData) {
 
 
 function CloseModal() {
-    console.log("Closing Modal");
     document.getElementById("modal").remove();
     document.getElementById("modal-background").remove();
 }

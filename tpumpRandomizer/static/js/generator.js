@@ -109,6 +109,14 @@ for (const blend of blendOptions) {
 
 
 function GenerateRandomDrink() {
+  // Automatically Select All Flavors if none selected
+  if (selectedFlavors.length <= 0) {
+    const allFlavors = document.getElementsByClassName("flavor-button");
+
+    for(const flavor of allFlavors)
+      selectedFlavors.push(flavor.id);
+  }
+
   const generatedData = {
     flavors: GetRandomFlavors(),
     sugarSetting: GetSugarSetting(),
@@ -117,6 +125,7 @@ function GenerateRandomDrink() {
     milkSetting: GetMilKSetting(),
     blendSetting: GetBlendSetting(),
   }
+  
   console.log(generatedData);
   CreateModal(generatedData);
   AddDrinkToDb(generatedData);
@@ -130,7 +139,7 @@ function GetRandomFlavors() {
   // Handle Less Than 3 flavors selected
   if(selectedFlavors.length <= 3) {
     for(const flavorId of selectedFlavors) 
-      pickedFlavors.push(flavors[flavorId].name);
+      pickedFlavors.push(flavors[flavorId].name.replaceAll(" ", "_"));
     return pickedFlavors;
   }
   
@@ -144,7 +153,7 @@ function GetRandomFlavors() {
     if(pickedIdHistory.has(randSelect))
       continue;
 
-    pickedFlavors.push(flavors[randSelect].name);
+    pickedFlavors.push(flavors[randSelect].name.replaceAll(" ", "_"));
     pickedIdHistory.add(randSelect)
   }
 
@@ -157,8 +166,8 @@ function GetSugarSetting() {
     return sugarInput.replace('-', ' ');
 
   // Generate Random Number
-  const randSelect = Math.floor(Math.random() * (sugarInput.length - 1))
-  return sugarInput[randSelect];
+  const randSelect = Math.floor(Math.random() * (sugarOptions.length - 1))
+  return sugarOptions[randSelect].replace('-', ' ');
 }
 
 function GetIceSetting() {
@@ -166,8 +175,8 @@ function GetIceSetting() {
     return iceInput.replace('-', ' ');
 
   // Generate Random Number
-  const randSelect = Math.floor(Math.random() * (iceInput.length - 1))
-  return iceInput[randSelect];
+  const randSelect = Math.floor(Math.random() * (iceOptions.length - 1))
+  return iceOptions[randSelect].replace('-', ' ');
 }
 
 function GetMilKSetting() {
