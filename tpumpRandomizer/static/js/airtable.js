@@ -1,7 +1,6 @@
 function getCookie(name) {
   const value = `; ${document.cookie}`; // Get All Cookies
   const parts = value.split(`; ${name}=`); // Get Cookie From Name
-  console.log(value, parts);
   
   const cookie = parts.pop();
 
@@ -30,6 +29,7 @@ async function AddDrinkToDb(drinkData) {
 
 async function GetAllDrinksFromDb() {
   const csrfToken = getCookie("csrfToken");
+  console.log(csrfToken)
   const url = "drink";
   const headers = {
     method: "GET",
@@ -40,5 +40,8 @@ async function GetAllDrinksFromDb() {
 
   return await fetch(url, headers)
   .then(response => response.json())
-  .then(data => data.body)
+  .then(data => {
+    console.log(data)
+    return data.body    
+  })
 }

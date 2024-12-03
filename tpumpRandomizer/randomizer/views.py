@@ -4,11 +4,14 @@ import json
 from django.conf import settings
 from pyairtable import Api
 from datetime import datetime
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 # Create your views here.
+@ensure_csrf_cookie
 def home(request):
     return render(request, "base.html", None)
 
+@ensure_csrf_cookie
 def history(request):
     return render(request, "history.html",None)    
 
@@ -87,10 +90,10 @@ def drink(request):
                 "success": True,
                 "body": dbData
             })
-        except:
+        except Exception as e:
             return JsonResponse({
                 "success": False,
-                "reason": "Could Not Get From Database"
+                "reason": str(e)
             })
 
     return JsonResponse({

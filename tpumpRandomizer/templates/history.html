@@ -15,6 +15,10 @@
   <link type="text/css" rel="stylesheet" href="{% static 'home.css' %}"/>
   <link type="text/css" rel="stylesheet" href="{% static 'history.css' %}"/>
 
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}"/>
+
   <script type="text/javascript" src="{% static 'navbar.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'airtable.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'history.js' %}" defer></script>
@@ -27,7 +31,6 @@
   </section>
 
   <section class="container">
-    <h3 class="title1">Recent Generations From Other Users</h3>
     {% include 'drinkHistory.html' %}
   </section>
 </body>
