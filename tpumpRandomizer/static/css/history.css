@@ -7,7 +7,12 @@
   Filter Button Background : #ffb119
   Exit Color:                #F4A4A4
 */
-
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 .history-container {
   background-color: azure;
   box-shadow: 0px 0px 5px 0px #5DCDCD;
@@ -28,9 +33,13 @@
   border: solid black 1px;
   margin: 15px;
   padding: 15px;
+  min-width: 20%;
+  align-items: center;
 }
 
-
+.strong {
+  font-weight: 600;
+}
 
 /* @media screen and (max-width: 1025px) {
 

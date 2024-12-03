@@ -19,7 +19,6 @@ async function AddDrinkToDb(drinkData) {
     },
     body: JSON.stringify({body: drinkData}),
   }
-  //JSON.stringify(drinkData)
 
   await fetch(url, headers)
   .then(response => response.json())
