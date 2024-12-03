@@ -25,7 +25,7 @@
   z-index: 3;
   position: fixed;
   background-color: darkgray;
-  opacity: 0.25;
+  opacity: 0.50;
   top: 0px;
   left: 0px;
 
@@ -53,7 +53,7 @@
 }
 
 .modal-button {
-  background-color: red;
+  background-color: #F4A4A4;
   border-radius: 15px;
   text-align: center;
   padding: 10px;

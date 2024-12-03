@@ -8,11 +8,18 @@
 }
 
 @media screen and (max-width: 1025px) {
-    .input-box {    
+    .input-box {   
+        margin: 0.1rem; 
         text-align: left;
-        margin: 0.1rem;
-        padding: 0.5rem;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .input-box {
+        border-radius: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
