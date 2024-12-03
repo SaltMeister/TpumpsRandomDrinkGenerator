@@ -20,7 +20,7 @@
 .flavor-button {
   border-radius: 15px;
   background-color: #D9FFFF;
-  transition: background 200ms;
+  transition: all 200ms;
   font-weight: 400;
 }
 .flavor-button:hover {

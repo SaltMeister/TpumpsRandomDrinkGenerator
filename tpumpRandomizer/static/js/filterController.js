@@ -48,7 +48,11 @@ function HighlightFilterFlavors(filterName) {
   for(const item of filteredList) {
     const ref = document.getElementById(item.id);
     selectedFlavors.push(item.id);
-    ref.classList.add("selected");
+
+    if(ref.classList.contains("extra-cost"))
+      ref.classList.add("extra-selected");
+    else
+      ref.classList.add("selected");
   }
 }
 
@@ -57,7 +61,11 @@ function HighlightAllFlavors() {
 
   const flavorButtonRefs = document.getElementsByClassName("flavor-button");
   for(const flavor of flavorButtonRefs) {
-    flavor.classList.add("selected");
+    if(flavor.classList.contains("extra-cost"))
+      flavor.classList.add("extra-selected");
+    else
+      flavor.classList.add("selected");
+      
     selectedFlavors.push(flavor.id)
   }
   console.log(selectedFlavors);
@@ -79,7 +87,10 @@ function ClearAllFilterHighlights() {
 function ClearFlavorHighlights() {
   const flavorButtonRefs = document.getElementsByClassName("flavor-button");
   for(const flavor of flavorButtonRefs) {
-    flavor.classList.remove("selected");    
+    if(flavor.classList.contains("extra-cost"))
+    flavor.classList.remove("extra-selected");
+  else
+    flavor.classList.remove("selected");  
   }
 
   // Empty Selected Flavor Array

@@ -6,9 +6,13 @@ const flavorOptionsContainerRef = document.getElementById("flavor-options");
 
 // Create All Flavors onto page
 
+// Loop Through Each Key in Flavor Dict
 Object.keys(flavors).forEach( key => {
     let itemContainerRef = document.createElement("div");
-
+    // Highlight Flavors that cost extra
+    if(flavors[key].extraPrice > 0) 
+      itemContainerRef.classList.add("extra-cost");
+    
     itemContainerRef.classList.add("flavor-button", "selectable");
     itemContainerRef.id = key
 
@@ -17,6 +21,8 @@ Object.keys(flavors).forEach( key => {
 
     itemContainerRef.appendChild(itemNameRef);
     flavorOptionsContainerRef.appendChild(itemContainerRef)
+
+
 
     itemContainerRef.addEventListener('click', () => {
       console.log("Clicked", key);
@@ -55,9 +61,12 @@ function HighLightSelectedFlavors() {
   for (const flavorId of selectedFlavors) {
     // Grab Element
     // Highlight
-    const flavorRef = document.getElementById(`${flavorId}`);
+    const flavorRef = document.getElementById(flavorId);
 
-    flavorRef.classList.add("selected");
+    if (flavorRef.classList.contains("extra-cost"))
+        flavorRef.classList.add("extra-selected");
+      else
+        flavorRef.classList.add("selected");
   }
 }
 
@@ -68,5 +77,8 @@ function RemoveHighLight(flavorId) {
 
   const flavorRef = document.getElementById(flavorId);
 
-  flavorRef.classList.remove("selected");
+  if (flavorRef.classList.contains("extra-cost"))
+    flavorRef.classList.remove("extra-selected");
+  else
+    flavorRef.classList.remove("selected");
 }
