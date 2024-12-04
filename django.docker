@@ -10,5 +10,8 @@ COPY ./tpumpRandomizer .
 
 EXPOSE 8000
 
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
 CMD gunicorn app.wsgi:application -b :8000
 
