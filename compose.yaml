@@ -24,6 +24,10 @@ services:
 
     volumes:
     - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    - ./tpumpRandomizer/static:/static
+
+    - ./tpumpRandomizer/static/html:/static/html # Mount Django static files for Nginx to serve
+    - ./tpumpRandomizer/static/css:/static/css    # Use Shell Script to move them all to root static
+    - ./tpumpRandomizer/static/js:/static/js
+    - ./tpumpRandomizer/static/favicon:/static/favicon
 
     container_name: tpumpRandomizer-nginx

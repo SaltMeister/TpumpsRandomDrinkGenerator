@@ -28,7 +28,7 @@ DB_KEY = os.getenv("DB_KEY")
 SECRET_KEY = 'django-insecure-*vx6$uvujqt$hvzw)^!@!y02+^&_-!zd3-2lzd*b+x#ia0%=$i'
 # TODO Handle WHEN DEPLOYING
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False # Turn False So that django not serving static files.3
 
 ALLOWED_HOSTS = ['*']
 

@@ -3,9 +3,14 @@ FROM nginx:alpine
 WORKDIR /
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./combine.sh /combine.sh
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
 
+# Use Shell Script to Move all Static file to static folder
+RUN chmod +x combine.sh
+	
+
 # Start NGINX when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh", "-c", "./combine.sh"]

@@ -83,7 +83,7 @@ def drink(request):
             # Grab Latest 20 items from the table
             dbData = table.all(
                 sort=["-date"], 
-                max_records=20
+                max_records=10
                 )
 
             return JsonResponse({
