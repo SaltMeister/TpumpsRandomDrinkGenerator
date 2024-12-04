@@ -11,3 +11,6 @@ COPY ./tpumpRandomizer .
 EXPOSE 8001
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8001"]
+
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/nginx.conf
