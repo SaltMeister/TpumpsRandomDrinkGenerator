@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 # Copy contents of subdir1, subdir2, subdir3 into /app/combined
 cp -a /static/html/. /static/
