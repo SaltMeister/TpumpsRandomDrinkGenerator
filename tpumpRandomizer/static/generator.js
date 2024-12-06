@@ -36,7 +36,6 @@ for (const sugar of sugarOptions) {
     document.getElementById(sugarInput).classList.remove("selected")
     sugarInput = sugar
     
-    console.log("set sugar to ", sugar)
     ref.classList.add("selected");
 
   })
@@ -53,7 +52,6 @@ for (const ice of iceOptions) {
     document.getElementById(iceInput).classList.remove("selected")
     iceInput = ice
 
-    console.log("set ice to ", ice)
     ref.classList.add("selected");
   })
 };
@@ -69,7 +67,6 @@ for (const milk of milkOptions) {
     document.getElementById(milkInput).classList.remove("selected")
     milkInput = milk
 
-    console.log("set milk to ", milk)
     ref.classList.add("selected");
   })
 };
@@ -85,7 +82,6 @@ for (const tea of teaOptions) {
     document.getElementById(teaInput).classList.remove("selected")
     teaInput = tea
 
-    console.log("set tea to ", tea)
     ref.classList.add("selected");
   })
 };
@@ -101,7 +97,6 @@ for (const blend of blendOptions) {
     document.getElementById(blendInput).classList.remove("selected")
     blendInput = blend
     
-    console.log("set blend to ", blend)
     ref.classList.add("selected");
   })
 };
@@ -126,7 +121,6 @@ function GenerateRandomDrink() {
     blendSetting: GetBlendSetting(),
   }
   
-  console.log(generatedData);
   CreateModal(generatedData);
   AddDrinkToDb(generatedData);
 }
@@ -199,7 +193,6 @@ function GetTeaSetting() {
 }
 
 function GetBlendSetting() {
-  console.log(blendInput)
   if (blendInput !== "blend-random")
     return blendInput.replace('-', ' ');
 

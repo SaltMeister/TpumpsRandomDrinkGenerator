@@ -1,8 +1,15 @@
 
 async function DisplayRecentDrinks() {
-  const drinkArray = await GetAllDrinksFromDb();
-
+  const drinkData = await GetAllDrinksFromDb();
   const containerRef = document.getElementById("history-container");
+
+  if('reason' in drinkData) {
+    containerRef.innerText = "Failed To Obtain Data"
+    return
+  }
+
+  const drinkArray = drinkData.body;
+  
   for (const drink of drinkArray) {
     const drinkContainerRef = document.createElement("div");
     containerRef.appendChild(drinkContainerRef);
@@ -12,6 +19,8 @@ async function DisplayRecentDrinks() {
     // Milk Setting And Blend Setting Missing From Airtable if False
     const milkSetting = "isAddMilk" in drink.fields ? "Yes" : "No";
     const blendSetting = "isBlended" in drink.fields ? "Yes" : "No";
+    const sugar = drink.fields.sugarSetting.split(" ")[1];
+    const ice = drink.fields.iceSetting.split(" ")[1];
 
     const flavorArray = drink.fields.flavors.split(' ');
 
@@ -24,11 +33,8 @@ async function DisplayRecentDrinks() {
       
       const flavorName = flavor.trim().replaceAll("_", " ");
       const flavorColor = Object.values(flavors).filter(x => {
-        console.log(x.name, flavorName)
         return x.name === flavorName
       })[0]["color"];
-
-      console.log(flavorName, flavorColor);
       flavorHTMLString +=`<p class="title2 strong" style="color: ${flavorColor}">${flavorName}</p>`
     }
 
@@ -38,8 +44,8 @@ async function DisplayRecentDrinks() {
         ${flavorHTMLString}
       </div>
       <div>
-        <p><span class="strong">Sugar:</span> ${drink.fields.sugarSetting}</p>
-        <p><span class="strong">Ice:</span> ${drink.fields.iceSetting}</p>
+        <p><span class="strong">Sugar:</span> ${sugar}</p>
+        <p><span class="strong">Ice:</span> ${ice}</p>
         <p><span class="strong">Has Milk:</span> ${milkSetting}</p>
         <p><span class="strong">Is Blended:</span> ${blendSetting}</p>
         <p><span class="strong">Tea:</span> ${drink.fields.teaSetting}</p>

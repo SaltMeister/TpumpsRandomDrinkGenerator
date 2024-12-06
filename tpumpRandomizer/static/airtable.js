@@ -9,7 +9,6 @@ function getCookie(name) {
 
 async function AddDrinkToDb(drinkData) {
   const csrfToken = getCookie("csrfToken");
-  console.log(drinkData)
   const url = "drink";
   const headers = {
     method: "POST",
@@ -22,13 +21,12 @@ async function AddDrinkToDb(drinkData) {
 
   await fetch(url, headers)
   .then(response => response.json())
-  .then(data => console.log(data))
+  .catch(e => console.error("Failed To Upload Drink"))
 
 }
 
 async function GetAllDrinksFromDb() {
   const csrfToken = getCookie("csrfToken");
-  console.log(csrfToken)
   const url = "drink";
   const headers = {
     method: "GET",
@@ -39,8 +37,4 @@ async function GetAllDrinksFromDb() {
 
   return await fetch(url, headers)
   .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    return data.body    
-  })
 }
