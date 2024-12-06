@@ -12,7 +12,7 @@ COPY ./tpumpRandomizer/static /static
 EXPOSE 80
 
 # Use Shell Script to Move all Static file to static folder
-RUN chmod +x combine.sh
+# RUN chmod +x combine.sh
 
 # Start NGINX when the container launches
 # CMD ["/bin/sh", "-c", "./combine.sh"]

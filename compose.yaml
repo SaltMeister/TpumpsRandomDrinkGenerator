@@ -4,6 +4,8 @@ services:
     build: 
       context: .
       dockerfile: django.docker
+    image: django:latest
+    
     working_dir: /app
 
     ports:
@@ -24,5 +26,5 @@ services:
     volumes:
     - ./nginx.conf:/etc/nginx/conf.d/default.conf
     - ./tpumpRandomizer/static:/static
-    
+
     container_name: tpumpRandomizer-nginx

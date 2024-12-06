@@ -16,8 +16,9 @@ In order to deploy the project.
 
   This will tag the docker image which will reflect on Docker desktop.
 11. Push the docker image by typing:
-  docker push us-west1.docker.pkg.dev/[Google Artifact Repo Name]/[Google Artifact Image Name]:[Tag Name]
-
+  docker push [location name]/[Google Artifact Repo Name]/[Google Artifact Image Name]:[Tag Name]
+    I used us-west1-docker.pkg.dev
+    
   It should load and upload the layers of the container
 12. On Google Cloud Run, create a new service and select your uploaded container. Make sure to set the port to the associated container for 80 with Nginx and 8000 with Django.
 
