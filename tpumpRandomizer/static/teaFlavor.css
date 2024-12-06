@@ -1,0 +1,121 @@
+
+.flavor-option-container {
+  box-shadow: 0px 0px 5px 0px #5DCDCD;
+  background-color: #EFFFFF;
+  flex-direction: column;
+  border-radius: 15px;
+  margin: 0.5rem;
+  padding: 2em;
+}
+.flavor-filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.flavor-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.flavor-button {
+  border-radius: 15px;
+  background-color: #D9FFFF;
+  transition: background 200ms;
+  font-weight: 400;
+
+  margin: 0.15rem;
+  padding: 0.25rem;
+  font-size: calc(1vw + 5px);
+}
+.flavor-button:hover {
+  background-color: #76B9F3;
+}
+
+.flavor-filter-button {
+  border-radius: 15px;
+  background-color: #ffb119;
+  transition: background 200ms;
+  font-weight: 500;
+  align-items: center;
+  align-content: center;
+
+  margin: 0.25rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  font-size: 1em;
+}
+.flavor-filter-button:hover {
+  background-color: #76B9F3;
+}
+
+.clear-filter-button {
+  border-radius: 15px;
+  background-color: #F4A4A4;
+  transition: background 200ms;
+  font-weight: 500;
+  align-items: center;
+  align-content: center;
+  transition: background 200ms;
+
+  margin: 0.25rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  font-size: 1em;
+}
+
+.clear-filter-button:hover {
+  background-color: #76B9F3;
+}
+
+p {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1025px) {
+  .flavor-option-container {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0.1rem;
+    margin-bottom: 10px;
+  }
+  .flavor-button {
+    margin: 0.20rem;
+    padding: 0.10rem;
+    font-size: 1.25em;
+
+  }
+  .flavor-filter-button {
+    margin: 0.10rem;
+    padding: 0.25rem;
+    font-size: 1em;
+  }
+  .clear-filter-button {
+    margin: 0.25rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 425px)  {
+  .flavor-option-container {
+    border-radius: 0px;
+  }
+
+  .flavor-button {
+    margin: 0.10rem;
+    padding: 0.10rem;
+    font-size: 1em;
+
+  }
+  .flavor-filter-button {
+    margin: 0.10rem;
+    padding: 0.25rem;
+    font-size: 1em;
+  }
+  .clear-filter-button {
+    margin: 0.10rem;
+    padding: 0.25rem;
+    font-size: 1em;
+  }
+}

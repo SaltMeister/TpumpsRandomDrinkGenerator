@@ -1,0 +1,59 @@
+/* 
+  Text:                      #0f0326
+  Base Background:          azure
+  Item Background:          #D9FFFF
+  Selected:                  #376996
+  Selected Text Color:       #E6FFFF
+  Filter Button Background : #ffb119
+  Exit Color:                #F4A4A4
+*/
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.history-container {
+  background-color: azure;
+  box-shadow: 0px 0px 5px 0px #5DCDCD;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  border-radius: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.drink-container {
+  background-color: #D9FFFF;
+  box-shadow: 0px 0px 5px 0px #5DCDCD;
+  border-radius: 15px;
+  border: solid black 1px;
+  margin: 15px;
+  padding: 15px;
+  min-width: 20%;
+  align-items: center;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+/* @media screen and (max-width: 1025px) {
+
+} */
+
+@media screen and (max-width: 465px) {
+  .history-container {
+    flex-direction: column;
+    margin: 1rem;
+
+  }
+
+  .drink-container {
+    margin: 5px;
+    padding: 5px;
+  }
+}

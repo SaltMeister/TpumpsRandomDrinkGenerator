@@ -20,12 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv() # Load Environment File
 
 DB_KEY = os.getenv("DB_KEY") 
+DJANGO_KEY = os.getenv("DJANGO_KEY")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-# TODO Handle WHEN DEPLOYING
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*vx6$uvujqt$hvzw)^!@!y02+^&_-!zd3-2lzd*b+x#ia0%=$i'
+SECRET_KEY = DJANGO_KEY
+
 # TODO Handle WHEN DEPLOYING
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False # Turn False So that django not serving static files.3
@@ -129,7 +131,10 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / "static"
 #STATIC_URL = "/static/"
+
+# Url of where nginx container is deployed
 STATIC_URL = "https://nginx-309770098490.us-west1.run.app/static/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

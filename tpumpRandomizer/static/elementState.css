@@ -1,0 +1,41 @@
+.pressable {
+    transition: background 200ms;
+
+}
+.selected {
+    background-color: #376996 !important;
+    color: #E6FFFF !important;
+}
+.disabled {
+    background-color: lightgray;
+}
+
+.extra-selected {
+    color: #E6FFFF !important;
+    background: repeating-linear-gradient(
+      45deg,
+      lightblue,
+      lightblue 10px,
+      #376996 10px,
+      #376996 20px
+    ) !important;
+}
+.extra-cost {
+    background: repeating-linear-gradient(
+      45deg,
+      lightblue,
+      lightblue 10px,
+      #D9FFFF 10px,
+      #D9FFFF 20px
+    );
+  }
+  
+  .extra-cost:hover {
+    background: repeating-linear-gradient(
+      45deg,
+      lightblue,
+      lightblue 10px,
+      #76B9F3 10px,
+      #76B9F3 20px
+    );
+  }

@@ -35,4 +35,8 @@ Add the API key and enter:
 
 Now that everything is setup we can run the project.
 
-Ensure your directory is tpumpRandomizer and
+Navigate to ./tpumpRandomizer and to run locally type:
+
+    python manage.py runserver
+
+    

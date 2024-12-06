@@ -1,0 +1,88 @@
+/* 
+  Text:                     #0f0326
+  Background:                #D9FFFF
+  Selected:                 #376996
+  Selected Text Color:      #E6FFFF
+  Filter Button Background : #ffb119
+  Exit Color:               #F4A4A4
+*/
+body {
+  margin: 0px;
+  background-color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f0326;
+}
+p {
+  margin: 5px;
+}
+
+fieldset {
+  padding: 1.25em;
+  border: none;
+  display:flex;
+  flex-direction: column;
+}
+
+.generate-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  
+  border-radius: 15px;
+  background-color: #D9FFFF;
+  transition: background 200ms;
+  transition: 'box-shadow' 500ms;
+}
+.generate-button:hover {
+  background-color: #76B9F3;
+  box-shadow: 0px 5px 10px solid red inset;
+}
+.generate-button:active {
+  box-shadow: 0px 0px 25px 0px blue inset;
+}
+
+.input-item {
+  border-radius: 10px;
+  background-color: #D9FFFF;
+  transition: background 200ms;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+.input-item:hover {
+  background-color: #76B9F3;
+}
+
+.title1 {
+  font-size: 1.75rem;
+  text-transform: capitalize;
+}
+.title2 {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1025px) {
+  fieldset {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0.rem;
+    padding: 0rem;
+  }
+
+  .input-item {
+    padding: 0.1rem;
+    margin: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 425px)  {
+  .title1 {
+    font-size: 1.25rem;
+  }
+  .title2 {
+    font-size: 1rem;
+  }
+}
