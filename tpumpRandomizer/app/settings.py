@@ -33,7 +33,9 @@ SECRET_KEY = DJANGO_KEY
 DEBUG = False # Turn False So that django not serving static files.3
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ["https://tpumprandomizer.com",
+                        "https://www.tpumprandomizer.com",
+                        "https://tpump-randomizer-309770098490.us-west1.run.app"]
 
 # Application definition
 
@@ -130,7 +132,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static/favicon",
 ]
 STATIC_ROOT = BASE_DIR / "static"
-#STATIC_URL = "/static/"
+# STATIC_URL = "/static/"
 
 # Url of where nginx container is deployed
 STATIC_URL = "https://nginx-309770098490.us-west1.run.app/static/"

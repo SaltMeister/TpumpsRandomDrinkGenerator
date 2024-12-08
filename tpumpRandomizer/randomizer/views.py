@@ -33,8 +33,8 @@ def drink(request):
                     "Reason": "Incorrect Body Parameters"
                 }
             )
+        
         data = data['body'];
-        print(data)
         flavors = data['flavors']
         iceSetting = data['iceSetting']
         sugarSetting = data['sugarSetting']
@@ -54,7 +54,6 @@ def drink(request):
         else:
             milkSetting = True
             
-        print(blendSetting)
         # Set Blend Boolean
         if blendSetting == "no blend":
             blendSetting = False

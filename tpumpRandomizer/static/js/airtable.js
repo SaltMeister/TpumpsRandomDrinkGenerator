@@ -18,7 +18,7 @@ async function AddDrinkToDb(drinkData) {
     },
     body: JSON.stringify({body: drinkData}),
   }
-
+  
   await fetch(url, headers)
   .then(response => response.json())
   .catch(e => console.error("Failed To Upload Drink"))
